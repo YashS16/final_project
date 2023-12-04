@@ -33,9 +33,9 @@ def set_background(image_file):
 
 app = FastAPI()
 
-endpoint = "https://diagnostic-mv6hb5oqca-ew.a.run.app"
+endpoint = "https://diagnostic-mv6hb5oqca-ew.a.run.app/"
 # MODEL = tf.keras.models.load_model('/Users/yashshrivastava/code/YashS16/final_project/app/model/model.h5')
-MODEL = tf.keras.models.load_model(os.path.join(os.path.dirname(__file__),"..", "model", "3"))
+# MODEL = tf.keras.models.load_model(os.path.join(os.path.dirname(__file__),"..", "model", "3"))
 CLASS_NAMES = ['NORMAL', 'PNEUMONIA']
 
 @app.get('/')
