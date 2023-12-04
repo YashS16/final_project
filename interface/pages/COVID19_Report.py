@@ -3,7 +3,7 @@ import streamlit as st
 from PIL import Image
 import numpy as np
 from util import *
-from util import predict
+# from util import predict
 import requests
 
 # COVID19 Prediction Page
