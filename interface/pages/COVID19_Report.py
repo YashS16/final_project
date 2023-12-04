@@ -1,5 +1,5 @@
 import streamlit as st
-from keras.models import load_model
+# from keras.models import load_model
 from PIL import Image
 import numpy as np
 from util import *
@@ -19,7 +19,7 @@ st.markdown("<h2 style='color: white;'>Please Upload or Scan An X-Ray Image.</h2
 uploaded_file = st.file_uploader('', type=['jpeg', 'jpg', 'png'])
 
 # load model
-model = load_model('../model/3')
+# model = load_model('../model/3')
 
 if uploaded_file:
     st.image(uploaded_file, caption="Uploaded Image.", use_column_width=True)
@@ -38,7 +38,7 @@ if uploaded_file:
     if response.status_code == 200:
         result = response.json()
         # st.write(f"COVID Probability: {result['covid_probability']}")
-        if result['Confidence']> 0.50:
+        if result['Confidence']> 0.60:
             st.write("<h3 style='color: yellow;'>This Chest X-Ray Shows That The Patient is COVID Positive!</h3>", unsafe_allow_html=True)
         else:
              st.write(f"<h3 style='color: yellow;'>This Chest X-Ray Shows That The Patient is COVID Negative!</h3>", unsafe_allow_html=True)
