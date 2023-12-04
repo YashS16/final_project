@@ -30,7 +30,7 @@ if uploaded_file:
     # files = {"image": uploaded_file.getvalue()}
     image_byte = uploaded_file.read()
     # breakpoint()
-    response = requests.post("https://diagnostic-mv6hb5oqca-ew.a.run.app/predict", files={'file': image_byte})
+    response = requests.post("https://diagnostic-mv6hb5oqca-ew.a.run.app", files={'file': image_byte})
 
     print("Response Status Code:", response.status_code)
     print("Response Content:", response.content)
