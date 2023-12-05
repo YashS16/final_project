@@ -7,7 +7,7 @@ from util import *
 import requests
 
 # COVID19 Prediction Page
-set_background ("../bgs/covid.jpg")
+set_background ("pages/covid.jpg")
 
 # set title
 st.markdown("<h1><span style='color: black;'>COVID19 CHEST X-RAY</span> <span style='color: black;'>ANALYSIS</span></h1>", unsafe_allow_html=True)
