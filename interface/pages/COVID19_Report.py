@@ -7,7 +7,8 @@ from util import *
 import requests
 
 # COVID19 Prediction Page
-set_background ("/interface/pages/COVID19_Report.py")
+# set_background("/interface/pages/covid.jpg")
+set_background(os.path.join(os.path.dirname(__file__), "pages", "covid.jpg")
 
 # set title
 st.markdown("<h1><span style='color: black;'>COVID19 CHEST X-RAY</span> <span style='color: black;'>ANALYSIS</span></h1>", unsafe_allow_html=True)
