@@ -6,7 +6,6 @@ import requests
 from util import set_background
 from streamlit_option_menu import option_menu
 import subprocess
-from util import set_background, on_change
 import os
 
 #Menu
