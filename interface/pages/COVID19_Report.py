@@ -46,7 +46,7 @@ if uploaded_file:
     # Prepare image for API
     image_byte = uploaded_file.read()
 
-    response = requests.post("https://diagnostic-mv6hb5oqca-ew.a.run.app/predict", files={'file': image_byte})
+    response = requests.post("https://diagnostic-project-mv6hb5oqca-ew.a.run.app/predict_xray", files={'file': image_byte})
 
     print("Response Status Code:", response.status_code)
     print("Response Content:", response.content)
