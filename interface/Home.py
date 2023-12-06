@@ -14,7 +14,7 @@ import os
 
 st.write("# Welcome to SmartDiag Tech 👋")
 
-set_background(os.path.join(os.path.dirname(__file__),"..", "pages", "home_page.png"))
+# set_background(os.path.join(os.path.dirname(__file__),"..", "pages", "home_page.png"))
 
 
 st.markdown(
