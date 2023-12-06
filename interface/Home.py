@@ -3,7 +3,7 @@ from streamlit_option_menu import option_menu
 # from keras.models import load_model
 # from PIL import Image
 # import numpy as np
-from util import *
+from util import set_background
 # from streamlit_modal import Modal
 # from streamlit_extras.switch_page_button import switch_page
 import subprocess
@@ -14,7 +14,7 @@ import os
 
 st.write("# Welcome to SmartDiag Tech 👋")
 
-# set_background(os.path.join(os.path.dirname(__file__),"..", "pages", "home_page.png"))
+set_background(os.path.join(os.path.dirname(__file__),"..", "pages", "home_page.png"))
 
 
 st.markdown(
