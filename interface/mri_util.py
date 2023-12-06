@@ -4,14 +4,15 @@ import numpy as np
 from io import BytesIO
 from PIL import Image
 import tensorflow as tf
+import os
 
 
 app = FastAPI()
 
 
-endpoint = "https://diagnosticreportprediction-mv6hb5oqca-ew.a.run.app"
+endpoint = "https://diagnosticreportprediction-mv6hb5oqca-ew.a.run.app/"
 # MODEL = tf.keras.models.load_model('/Users/yashshrivastava/code/YashS16/final_project/app/model/model3.h5')
-
+MODEL = tf.keras.models.load_model(os.path.join(os.path.dirname(__file__),"..", "model", "model3.h5"))
 CLASS_NAMES = ["glioma_tumor", "meningioma_tumor", "no_tumor", "pituitary_tumor"]
 
 @app.get('/')
