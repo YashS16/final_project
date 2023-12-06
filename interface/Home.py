@@ -25,7 +25,7 @@ if selected =="Home":
     #subprocess.Popen(["streamlit", "run", ".py"])
     #os._exit(0)
 if selected == "Covid":
-    subprocess.Popen(["streamlit", "run", "pages/COVID19_Report.py"])
+    subprocess.Popen(["streamlit", "run", (os.path.join(os.path.dirname(__file__),"..", "pages", "COVID19_Report.py"])
     os._exit(0)
 if selected == "Brain":
     subprocess.Popen(["streamlit", "run", "pages/BRAIN_MRI.py"])
@@ -41,8 +41,7 @@ def Home():
 
 st.write("# Welcome to SmartDiag Tech 👋")
 
-def set_background():
-    set_background(os.path.join(os.path.dirname(__file__),"..", "pages", "home_page.png"))
+set_background(os.path.join(os.path.dirname(__file__),"..", "pages", "home_page.png"))
 
 
 st.markdown(
