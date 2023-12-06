@@ -28,7 +28,7 @@ if selected == "Covid":
     subprocess.Popen(["streamlit", "run", "pages/COVID19_Report.py"])
     os._exit(0)
 if selected == "Brain":
-    subprocess.Popen(["streamlit", "run", "BRAIN_MRI.py"])
+    subprocess.Popen(["streamlit", "run", "pages/BRAIN_MRI.py"])
     os._exit(0)
 
 
