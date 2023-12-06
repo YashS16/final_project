@@ -1,8 +1,8 @@
 import streamlit as st
+# from streamlit_option_menu import option_menu
 # from keras.models import load_model
 # from PIL import Image
 # import numpy as np
-from streamlit_option_menu import option_menu
 from util import set_background, on_change
 # from streamlit_modal import Modal
 # from streamlit_extras.switch_page_button import switch_page
