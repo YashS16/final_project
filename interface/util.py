@@ -9,13 +9,6 @@ import streamlit as st
 import os
 
 def set_background(image_file):
-    """
-    This function sets the background of a Streamlit app to an image specified by the given image file.
-    Parameters:
-        image_file (str): The path to the image file to be used as the background.
-    Returns:
-        None
-    """
     with open(image_file, "rb") as f:
         img_data = f.read()
     b64_encoded = base64.b64encode(img_data).decode()
@@ -33,20 +26,44 @@ def set_background(image_file):
 
 app = FastAPI()
 
-endpoint = "https://diagnostic-mv6hb5oqca-ew.a.run.app/"
 # MODEL = tf.keras.models.load_model('/Users/yashshrivastava/code/YashS16/final_project/app/model/model.h5')
-# MODEL = tf.keras.models.load_model(os.path.join(os.path.dirname(__file__),"..", "model", "3"))
-CLASS_NAMES = ['NORMAL', 'PNEUMONIA']
+MODEL1 = tf.keras.models.load_model(os.path.join(os.path.dirname(__file__),"..", "model", "model3.h5"))
+CLASS_NAMES1 = ["glioma_tumor", "meningioma_tumor", "no_tumor", "pituitary_tumor"]
 
 @app.get('/')
 def ping():
-    # load a machine learning model
-    # model.predict
+
     return {"ok": True}
+def read_file_as_image2(data) -> np.ndarray:
+    image = np.array(Image.open(BytesIO(data)).resize((331, 331)))/255
+    return image
+
+@app.post("/predict_mri")
+async def predict(
+    file: UploadFile = File(...)
+    ):
+     image = read_file_as_image2(await file.read())
+     img_batch = np.expand_dims(image, 0)
+     prediction = MODEL1.predict(img_batch)
+     prediction_class = CLASS_NAMES1[np.argmax(prediction[0])]
+     confidence = np.max(prediction[0])
+     return {
+         'Class': prediction_class,
+        'Confidence': float(confidence)
+    }
+
+# MODEL = tf.keras.models.load_model('/Users/yashshrivastava/code/YashS16/final_project/app/model/model.h5')
+MODEL = tf.keras.models.load_model(os.path.join(os.path.dirname(__file__),"..", "model", "3"))
+CLASS_NAMES = ['NORMAL', 'PNEUMONIA']
+
+# @app.get('/')
+# def ping():
+
+#     return {"ok": True}
 def read_file_as_image(data) -> np.ndarray:
     image = np.array(Image.open(BytesIO(data)).resize((244, 244)))
     return image
-@app.post("/predict")
+@app.post("/predict_xray")
 async def predict(
     file: UploadFile = File(...)
     ):
@@ -61,7 +78,6 @@ async def predict(
          'Class': prediction_class,
          'Confidence': float(confidence)
      }
-
 # # Horizontal menu
 # def on_change(key):
 #     selection = st.session_state[key]
