@@ -1,5 +1,5 @@
 import streamlit as st
-from util import set_background, on_change
+# from util import set_background
 import subprocess
 import os
 from streamlit_option_menu import option_menu
@@ -74,7 +74,7 @@ def about():
     )
 
 
-    st.image('./bgs/model1.png', caption='Representation of the model we used')
+    st.image('os.path.join(os.path.dirname(__file__),"..", "pages", "model1.png"', caption='Representation of the model we used')
 
 
 
