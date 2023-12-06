@@ -61,6 +61,7 @@ async def predict(
          'Class': prediction_class,
          'Confidence': float(confidence)
      }
-# if __name__ == "__main__":
-#     # print(os.path.join(os.path.dirname(__file__),"..", "model", "model.h5"))
-    # uvicorn.run(app, host='GCP')
+
+# Horizontal menu
+def on_change(key):
+    selection = st.session_state[key]
