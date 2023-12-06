@@ -34,3 +34,4 @@ setuptools
 streamlit
 keras
 python-multipart
+streamlit-option-menu
