@@ -62,6 +62,6 @@ async def predict(
          'Confidence': float(confidence)
      }
 
-# Horizontal menu
-def on_change(key):
-    selection = st.session_state[key]
+# # Horizontal menu
+# def on_change(key):
+#     selection = st.session_state[key]
