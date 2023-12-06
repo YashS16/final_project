@@ -2,7 +2,7 @@ import streamlit as st
 # from util import set_background
 import subprocess
 import os
-from streamlit_option_menu import option_menu
+# from streamlit_option_menu import option_menu
 
 
 # #Menu
