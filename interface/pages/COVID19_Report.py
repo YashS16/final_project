@@ -8,20 +8,20 @@ from streamlit_option_menu import option_menu
 from util import set_background, on_change
 import os
 
-#Menu
-selected = option_menu(None, ["Home", "About Us", "Covid", "Brain"],
-                    icons=['house', "people", 'lungs', "f5dc"],
-                    on_change=on_change, key='menu_4', orientation="horizontal")
+# #Menu
+# selected = option_menu(None, ["Home", "About Us", "Covid", "Brain"],
+#                     icons=['house', "people", 'lungs', "f5dc"],
+#                     on_change=on_change, key='menu_4', orientation="horizontal")
 
-if selected =="Home":
-    #st.rerun() or st.experimental_rerun()
-    print('Yes')
-if selected == "Covid":
-    subprocess.Popen(["streamlit", "run", "pages/COVID19_Report.py"])
-    os._exit(0)
-if selected == "Brain":
-    subprocess.Popen(["streamlit", "run", "pages/BRAIN_MRI.py"])
-    os._exit(0)
+# if selected =="Home":
+#     #st.rerun() or st.experimental_rerun()
+#     print('Yes')
+# if selected == "Covid":
+#     subprocess.Popen(["streamlit", "run", "pages/COVID19_Report.py"])
+#     os._exit(0)
+# if selected == "Brain":
+#     subprocess.Popen(["streamlit", "run", "pages/BRAIN_MRI.py"])
+#     os._exit(0)
 #if selected == "About us":
     #subprocess.Popen(["streamlit", "run", ".py"])
     #os._exit(0)
