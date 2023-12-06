@@ -2,7 +2,7 @@ import streamlit as st
 # from keras.models import load_model
 # from PIL import Image
 # import numpy as np
-from streamlit_option_menu import option_menu
+from streamlit import option_menu
 from util import set_background, on_change
 # from streamlit_modal import Modal
 # from streamlit_extras.switch_page_button import switch_page
@@ -21,15 +21,16 @@ selected = option_menu(None, ["Home", "About Us", "Covid", "Brain"],
 if selected =="Home":
     #st.rerun() or st.experimental_rerun()
     print('Yes')
+#if selected == "About us":
+    #subprocess.Popen(["streamlit", "run", ".py"])
+    #os._exit(0)
 if selected == "Covid":
     subprocess.Popen(["streamlit", "run", "pages/COVID19_Report.py"])
     os._exit(0)
 if selected == "Brain":
     subprocess.Popen(["streamlit", "run", "BRAIN_MRI.py"])
     os._exit(0)
-#if selected == "About us":
-    #subprocess.Popen(["streamlit", "run", ".py"])
-    #os._exit(0)
+
 
 def Home():
     st.set_page_config(
